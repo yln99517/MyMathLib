@@ -1,0 +1,25 @@
+<html>
+
+<head>
+	<title>
+		hello systemJS
+	</title>
+	<script type="systemjs-importmap">
+        {
+            "imports":{
+                "myMathLib": "./dist/myMathLib.js"
+            }
+        }
+	</script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/system.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/named-register.js"></script>
+    <h1>See browser console for errors</h1>
+    <button id="loader" onclick="">System.import('myMathLib');</button>
+    <script>
+        document.getElementById('loader').addEventListener('click', function() {
+            System.import('myMathLib');
+        });
+    </script>
+</body>
+
+</html>
